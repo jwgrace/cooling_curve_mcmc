@@ -1,6 +1,7 @@
 import numpy as np
 import importlib
 import sys
+import os
 import getopt
 import subprocess
 import emcee
@@ -30,6 +31,12 @@ except getopt.error as err:
     
 # Import file containing all the mcmc variables.
 mcmc = importlib.import_module(mcmc_parameters_file)
+
+try:
+    os.mkdir(mcmc.model_directory)
+    os.mkdir('{}/LOGS'.format(mcmc.model_directory))
+except:
+    pass
 
 parameter_options = mcmc.parameter_options
 Teff_obs = mcmc.Teff_obs

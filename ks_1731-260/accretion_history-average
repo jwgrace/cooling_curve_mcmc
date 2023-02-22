@@ -1,0 +1,19 @@
+! File for reading in the accretion history.
+! Lines starting with a '!' are ignored
+!
+number_cycles 1
+Mdot_scale 1.0  ! [g/s]
+columns 'time [d]'  'Mdot [g/s]'
+!
+epochs  ! time [d]  Mdot [g/s]
+
+-4475.3190	1.4918e+17
+  0.0000	0.0000e+00
+ 65.1000	0.0000e+00
+235.7000	0.0000e+00
+751.6000	0.0000e+00
+929.5000	0.0000e+00
+1500.5000	0.0000e+00
+1582.9000	0.0000e+00
+3039.7000	0.0000e+00
+5312.1000	0.0000e+00

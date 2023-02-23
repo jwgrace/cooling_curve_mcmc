@@ -31,6 +31,15 @@ except getopt.error as err:
 # Import file containing all the mcmc variables.
 mcmc = importlib.import_module(mcmc_parameters_file)
 
+try:
+    os.mkdir(mcmc.model_directory)
+except:
+    pass
+try:
+    os.mkdir(mcmc.LOGS)
+except:
+    pass
+
 # The number of dimensions in parameter space.
 ndim = mcmc.parameter_values_initial.shape[0]
 

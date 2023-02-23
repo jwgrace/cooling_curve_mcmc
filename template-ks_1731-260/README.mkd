@@ -1,0 +1,15 @@
+## Cooling Curve MCMC Template
+
+This directory contains code for running an MCMC to fit dStar parameters to a cooling curve, using KS 1731-260 as an example.
+
+You might need to make a few preliminary changes before being able to run it properly:
+
+1. Set the environment variables `DSTAR_LIB_DIR` and `DSTAR_INC` to the correct path in the makefile (in make/makefile).
+
+2. Make an accretion history file for your source. Choose epochs of non-accretion to be times in which you would like to compare to observations. If you create an accretion history file with a different name, you must specify this in the inlist: `epoch_datafile = accretion_history`.
+
+3. Change the parameters and variables for your source in the `mcmc_parameters.py` file. This includes:
+    *  The names of the source and all output files and plots
+    * `is_observation_epoch` to specify which epochs in the accretion history file correspond to observations and which correspond to accretion.
+    * `observation_times` to specify the times after the outburst for which we have temperature data.
+    * `Teff_obs` and `Teff_obs_sigma` to specify the effective temperature and the uncertainty in the effective temperature for our observational data respectively.
